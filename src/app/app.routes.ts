@@ -1,3 +1,14 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import {routes as LandingRoutes} from '@/modules/landing/landing.routes'
+
+export const routes: Routes = [
+    {
+        path: 'landing',
+        loadChildren : () => LandingRoutes
+    },
+    { path: '',
+        redirectTo: '/landing',
+        pathMatch: 'full'
+    },
+];
