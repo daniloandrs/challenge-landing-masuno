@@ -1,18 +1,20 @@
-import { Injectable, Renderer2, RendererFactory2, afterRender } from '@angular/core';
+import { Injectable, Renderer2, RendererFactory2, afterNextRender, afterRender } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ScreenSizeService {
-  private renderer: Renderer2;
+  private renderer!: Renderer2;
   private screenSize = new BehaviorSubject<string>('');
 
   screenSize$ = this.screenSize.asObservable();
 
   constructor(rendererFactory: RendererFactory2) {
-    this.renderer = rendererFactory.createRenderer(null, null);
-    this.initScreenSizeListener();
+    afterNextRender(() => {
+      this.renderer = rendererFactory.createRenderer(null, null);
+      this.initScreenSizeListener();
+    })
   }
 
   private initScreenSizeListener(): void {
@@ -23,7 +25,7 @@ export class ScreenSizeService {
   }
 
   private updateScreenSize(): void {
-    afterRender(() => {
+    // afterRender(() => {
         const width = window.innerWidth;
 
         if (width < 768) {
@@ -33,7 +35,7 @@ export class ScreenSizeService {
         } else {
           this.screenSize.next('Desktop');
         }
-    })
+    // })
 
   }
 }
