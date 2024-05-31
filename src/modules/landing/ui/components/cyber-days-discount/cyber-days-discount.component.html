@@ -1,1 +1,86 @@
-<p>cyber-days-discount works!</p>
+
+<landing-section>
+    <div class="w-full text-center">
+        <h3 class="text-3xl font-bold text-landing-blue mb-4">
+            ¿Como obtengo el descuento por Cyber Days?
+        </h3>
+        <img class="m-auto w-[70%]" src="./assets/trazos/trazo-red-pink.svg"  alt="trazo">
+    </div>
+
+    <div class="my-4 text-center">
+        <span class="text-gray-600 text-2xl ">
+            Para adquirir nuestro descuento especial por <strong class="text-landing-red">Cyber Days</strong> sigue los siguientes pasos
+        </span>
+    </div>
+
+    <div class="md:pt-[3rem] w-full overflow-hidden" slider>
+
+        <ng-container>
+            <ngx-glide #ngxCyber
+                [perView]="perView"
+                [gap]="10"
+                [arrowLeftLabel]="'<'"
+                [arrowRightLabel]="'>'"
+            >
+                <div class="text-center">
+                    <h3 class="text-landing-blue text-2xl font-extrabold">
+                        Paso 1
+                    </h3>
+                
+                    <img src="./assets/icons/register.svg" class="m-auto py-4">
+                
+                    <h3 class="text-landing-blue text-2xl font-extrabold py-4">
+                        Registrate
+                    </h3>
+
+                    <p  class="text-gray-600 text-lg text-center">
+                        Completa el formulario con tus
+                    </p>
+
+                    <p  class="text-gray-600 text-lg text-center">
+                        datos personales y acepta los términos.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <h3 class="text-landing-blue text-2xl font-extrabold">
+                        Paso 2
+                    </h3>
+                
+                    <img src="./assets/icons/get_coupon.svg" class="m-auto py-6">
+                
+                    <h3 class="text-landing-blue text-2xl font-extrabold py-6">
+                        Recibe un cupón
+                    </h3>
+                    <p  class="text-gray-600 text-lg text-center">
+                        Recibirás un correo electrónico 
+                    </p>
+
+                    <p  class="text-gray-600 text-lg text-center">
+                        donde podrás ver el cupón de descuento.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-landing-blue text-2xl font-extrabold">
+                        Paso 3
+                    </h3>
+                
+                    <img src="./assets/icons/save_money.svg" class="m-auto py-6">
+                
+                    <h3 class="text-landing-blue text-2xl font-extrabold py-6">
+                        Empieza a ahorrar
+                    </h3>
+
+                    <p  class="text-gray-600 text-lg text-center">
+                        ¡Y listo! Podrás usarlo del 28 al 30 de Marzo
+                    </p>
+
+                    <p  class="text-gray-600 text-lg text-center">
+                       por compras en nuestra tienda online.
+                    </p>
+                </div>
+            </ngx-glide>
+        </ng-container>
+    </div>
+</landing-section>
+

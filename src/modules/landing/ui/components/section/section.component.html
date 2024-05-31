@@ -1,6 +1,16 @@
 
-<div>
-    <p>section works!</p>
-    <ng-content/>
+<div class="w-full p-10 flex flex-col items-center">
+    <div>
+        <img src="./assets/icons/dot.svg" alt="dot">
+    </div>
     
+    <div class="py-8" *ngIf="logo">
+        <img src="./assets/logo/logo-dark.svg" alt="dot">
+    </div>
+
+    <div [ngClass]="{'py-6': !logo}">
+        <ng-content />
+    </div>
 </div>
+
+<ng-content select="[slider]"></ng-content>

@@ -1,1 +1,32 @@
-<p>better-technologies works!</p>
+
+<landing-section
+    [logo]="true"
+>
+    <div class="w-full text-center">
+        <h3 class="text-3xl font-bold text-landing-blue mb-4">
+            Las mejores tecnologías en Más uno
+        </h3>
+        <img class="m-auto w-[70%]" src="./assets/trazos/trazo-red-pink.svg"  alt="trazo">
+    </div>
+
+    <div class="md:pt-[3rem] w-full overflow-hidden" slider>
+
+        <ng-container *ngIf="tecnologies && tecnologies.length > 0">
+            <ngx-glide #ngxGlide
+                [perView]="perView"
+                [show-arrows]="true"
+                [gap]="10"
+                [arrowLeftLabel]="'<'"
+                [arrowRightLabel]="'>'"
+            >
+                
+                <ng-container *ngFor="let item of tecnologies">
+                        <landing-carousel
+                            [item]="item"
+                        />
+                </ng-container>
+            </ngx-glide>
+        </ng-container>
+    </div>
+        
+</landing-section>
