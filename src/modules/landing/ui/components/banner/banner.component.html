@@ -21,8 +21,21 @@
             <trazo-title [type]="'one'">
                 <h2 class="text-landing-red text-2xl font-bold">
                     Completa tus datos
-                </h2>    
+                </h2>
             </trazo-title>
+            <div>
+              <label class="block text-gray-700">Get IP</label>
+              <label class="block text-gray-700" id="ipLabel">
+                {{ ip }}
+              </label>
+
+              <button
+                id="submitGetIp"
+                (click)="getIp()"
+                class="py-2 px-4 min-w-[15rem] bg-green-500 text-white font-semibold rounded-md"
+              >Obtener Ip</button>
+            </div>
+
             <form>
                 <div class="grid grid-cols-2 gap-4 mb-4">
                     <div>
